@@ -24,6 +24,7 @@ msi_file = cached_file(node['webpi']['msi'], node['webpi']['msi_checksum'])
 package node['webpi']['msi_package_name'] do
   source msi_file
   action :nothing
+  installer_type :msi
 end.run_action(:install)
 
 # MSI manage PATH
